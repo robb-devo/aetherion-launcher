@@ -1,6 +1,6 @@
-param(
+﻿param(
   [string]$Version = "0.4",
-  [string]$Owner = "washryan",
+  [string]$Owner = "robb-devo",
   [string]$Repo = "launcheraetherion",
   [string]$AssetsPath = "release-v0.4-upload\\assets",
   [string]$ReleaseBody = "Aetherion modpack assets used by public/manifest.json."

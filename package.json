@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "aetherion-launcher",
   "version": "0.4.1",
   "description": "Aetherion Minecraft launcher",
@@ -64,7 +64,7 @@
     "publish": {
       "provider": "github",
       "owner": "robb-devo",
-      "repo": "launcheraetherion",
+      "repo": "aetherion-launcher",
       "releaseType": "release"
     },
     "asar": true,

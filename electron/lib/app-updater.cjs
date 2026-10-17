@@ -1,5 +1,5 @@
-/**
- * In-app updates from GitHub Releases on robb-devo/launcheraetherion.
+﻿/**
+ * In-app updates from GitHub Releases on robb-devo/aetherion-launcher.
  * electron-builder writes app-update.yml and dist/latest.yml for this feed.
  * A release only updates installed copies when it is the latest non-draft
  * release and it contains latest.yml, the Setup.exe, and the .blockmap.

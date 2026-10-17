@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Aetherion - Build Manifest
  *
@@ -19,7 +19,7 @@ import { readdir, stat, writeFile } from "node:fs/promises"
 import { basename, join, posix, relative } from "node:path"
 
 const IGNORED_FILENAMES = new Set([
-  // Mantemos a 2.0.1.166; esta antiga ficou sobrando no diretório do pack.
+  // Mantemos a 2.0.1.166; esta antiga ficou sobrando no diretÃ³rio do pack.
   "TerraBlender-forge-1.19.2-2.0.1.136.jar",
 ])
 
@@ -33,7 +33,7 @@ const mcVersion = args.mc ?? "1.19.2"
 const forgeVersion = args.forge ?? "43.5.0"
 const inDir = args.in ?? `./pack-v${version}`
 const outFile = args.out ?? "./manifest.json"
-const ghOwner = args.owner ?? "washryan"
+const ghOwner = args.owner ?? "robb-devo"
 const ghRepo = args.repo ?? "launcheraetherion"
 const serverHost = args.server ?? "left-fcc.gl.joinmc.link"
 const siteUrl = args.site ?? `https://${ghOwner}.github.io/${ghRepo}/`

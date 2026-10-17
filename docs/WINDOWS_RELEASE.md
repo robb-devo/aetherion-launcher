@@ -6,7 +6,7 @@ This build keeps Play, version switching, the sandbox tiers, and in-app update. 
 
 Players install `Aetherion.Launcher.Setup.0.4.0.exe` once. That build checks GitHub Releases for `latest.yml` and installs newer versions inside the app. NSIS upgrades the same app id (`gg.aetherion.launcher`) and leaves the AppData folder in place. The taskbar id is the same app id, so the launcher is one button. The Microsoft window uses `skipTaskbar`. The installer is started with NSIS `/S` and Electron `windowsHide`, so the update does not open a command window.
 
-v0.3.4 is still the latest GitHub Release in the notes from 0.3.9 and it has no `latest.yml` (only the Setup.exe and the blockmap). `https://github.com/robb-devo/launcheraetherion/releases/latest/download/latest.yml` returns 404 until a release that includes `latest.yml` is marked latest. 0.3.7 and 0.3.8 were never tagged. Tagging `v0.4.0` after merge is what makes in-app update pick up this build. The previous package version on main was 0.3.9.
+v0.3.4 is still the latest GitHub Release in the notes from 0.3.9 and it has no `latest.yml` (only the Setup.exe and the blockmap). `https://github.com/robb-devo/aetherion-launcher/releases/latest/download/latest.yml` returns 404 until a release that includes `latest.yml` is marked latest. 0.3.7 and 0.3.8 were never tagged. Tagging `v0.4.0` after merge is what makes in-app update pick up this build. The previous package version on main was 0.3.9.
 
 ### Version
 
@@ -17,13 +17,13 @@ v0.3.4 is still the latest GitHub Release in the notes from 0.3.9 and it has no 
 | `/download` and settings | `lib/launcher/version.ts` imports `package.json` |
 | NSIS artifact | `Aetherion.Launcher.Setup.0.4.0.exe` |
 | GitHub tag | `v0.4.0` |
-| Release repo | `robb-devo/launcheraetherion` |
+| Release repo | `robb-devo/aetherion-launcher` |
 
 The tag and `package.json` version must match.
 
 ### Ship
 
-1. Merge into `robb-devo/launcheraetherion` `main`.
+1. Merge into `robb-devo/aetherion-launcher` `main`.
 2. Tag that commit:
 
 ```powershell
@@ -42,7 +42,7 @@ git push origin v0.4.0
 4. Confirm the release is not a draft, is marked latest, and that `latest.yml` is attached:
 
 ```txt
-https://github.com/robb-devo/launcheraetherion/releases/latest/download/latest.yml
+https://github.com/robb-devo/aetherion-launcher/releases/latest/download/latest.yml
 ```
 
 Anyone on an older installed build receives 0.4.0 in the app only after this release is the latest one and `latest.yml` is attached. The setup executable is only the first install. A release without `latest.yml` looks like "no update" to electron-updater.
@@ -56,7 +56,7 @@ $env:GITHUB_TOKEN="PASTE_YOUR_TOKEN_HERE"
 pnpm release:win
 ```
 
-`release:win` runs `pnpm build:win` and `scripts/publish-windows-release.ps1`. The script reads the version from `package.json` and uploads the installer to `robb-devo/launcheraetherion`. This Linux environment does not produce the Windows installer.
+`release:win` runs `pnpm build:win` and `scripts/publish-windows-release.ps1`. The script reads the version from `package.json` and uploads the installer to `robb-devo/aetherion-launcher`. This Linux environment does not produce the Windows installer.
 
 ---
 
@@ -78,7 +78,7 @@ GitHub App so vale a pena quando voce quer criar uma integracao instalavel para 
 O site aponta para este padrao:
 
 ```txt
-https://github.com/robb-devo/launcheraetherion/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
+https://github.com/robb-devo/aetherion-launcher/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
 ```
 
 Esse link so existe quando:
@@ -94,7 +94,7 @@ Esse caminho nao exige token local.
 
 1. Garanta que as Actions podem criar releases:
 
-- GitHub > repositorio `robb-devo/launcheraetherion`
+- GitHub > repositorio `robb-devo/aetherion-launcher`
 - Settings > Actions > General
 - Workflow permissions
 - marque `Read and write permissions`
@@ -110,7 +110,7 @@ git push origin v0.2.0
 3. Abra:
 
 ```txt
-https://github.com/robb-devo/launcheraetherion/actions
+https://github.com/robb-devo/aetherion-launcher/actions
 ```
 
 4. Aguarde o workflow `Build Windows Release` terminar.
@@ -118,7 +118,7 @@ https://github.com/robb-devo/launcheraetherion/actions
 5. Teste o link:
 
 ```txt
-https://github.com/robb-devo/launcheraetherion/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
+https://github.com/robb-devo/aetherion-launcher/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
 ```
 
 Se o download iniciar, o site `/download` tambem vai funcionar.
@@ -144,7 +144,7 @@ Get-Item ".\dist\Aetherion.Launcher.Setup.0.2.0.exe"
 3. Crie um token no GitHub:
 
 - Acesse GitHub > Settings > Developer settings > Personal access tokens.
-- Use um token com permissao `Contents: Read and write` no repo `robb-devo/launcheraetherion`.
+- Use um token com permissao `Contents: Read and write` no repo `robb-devo/aetherion-launcher`.
 - Copie o token.
 
 4. No PowerShell, defina o token apenas para a sessao atual:
@@ -162,7 +162,7 @@ pnpm release:win
 6. Teste o link:
 
 ```txt
-https://github.com/robb-devo/launcheraetherion/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
+https://github.com/robb-devo/aetherion-launcher/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
 ```
 
 Se o download iniciar, o site `/download` tambem vai funcionar.
@@ -187,7 +187,7 @@ O launcher baixa os mods assim:
 2. Cada arquivo do manifest tem uma URL de GitHub Release, por exemplo:
 
 ```txt
-https://github.com/robb-devo/launcheraetherion/releases/download/v0.3/aether-1.19.2-1.4.2-forge.jar
+https://github.com/robb-devo/aetherion-launcher/releases/download/v0.3/aether-1.19.2-1.4.2-forge.jar
 ```
 
 3. O launcher baixa o asset do release `v0.3`.

@@ -15,7 +15,7 @@ Compared with `main` (`0.3.0`), these storage decisions are the same functions a
 | Instance state | `instance-state.json` inside that instance folder | `instanceStatePath()` |
 | Default instance id | `aetherion-main` | unchanged |
 | Install identity | `gg.aetherion.launcher` | `package.json` `build.appId` |
-| Modpack manifest URL | `https://raw.githubusercontent.com/robb-devo/launcheraetherion/main/public/manifest.json` | unchanged |
+| Modpack manifest URL | `https://raw.githubusercontent.com/robb-devo/aetherion-launcher/main/public/manifest.json` | unchanged |
 | Server | `left-fcc.gl.joinmc.link` | unchanged |
 
 NSIS stays per-user (`perMachine: false`) with the same app id, so installing `0.3.2` over an older build replaces the program files and leaves the AppData folder in place. The window background color changed. That is chrome only.
