@@ -3,7 +3,7 @@
 Fluxo sem custo inicial:
 
 - Site e `manifest.json`: Vercel ou GitHub Pages.
-- Arquivos pesados: GitHub Releases do repositorio `washryan/launcheraetherion`.
+- Arquivos pesados: GitHub Releases do repositorio `robb-devo/launcheraetherion`.
 - Launcher: baixa somente o que mudou, valida SHA-256 e preserva drop-ins.
 
 ## 1. Estrutura local do pack
@@ -38,7 +38,7 @@ pnpm manifest:build
 Esse comando roda:
 
 ```powershell
-node scripts/build-manifest.mjs --version 0.3 --mc 1.19.2 --forge 43.5.0 --in ./pack-v0.3 --out ./manifest.json --owner washryan --repo launcheraetherion
+node scripts/build-manifest.mjs --version 0.3 --mc 1.19.2 --forge 43.5.0 --in ./pack-v0.3 --out ./manifest.json --owner robb-devo --repo launcheraetherion
 ```
 
 O script calcula:
@@ -62,7 +62,7 @@ Crie a tag/release `v0.3` e envie Forge + mods + configs:
 
 ```powershell
 gh release create v0.3 `
-  --repo washryan/launcheraetherion `
+  --repo robb-devo/launcheraetherion `
   --title "Aetherion Modpack v0.3" `
   --notes "Primeiro pacote Aetherion com Forge 1.19.2-43.5.0" `
   pack-v0.3/forge-1.19.2-43.5.0-installer.jar `
@@ -114,7 +114,7 @@ https://SEU-PROJETO.vercel.app/manifest.json
 No build empacotado, o launcher busca por padrao:
 
 ```text
-https://raw.githubusercontent.com/washryan/launcheraetherion/main/public/manifest.json
+https://raw.githubusercontent.com/robb-devo/launcheraetherion/main/public/manifest.json
 ```
 
 In the launcher, open Settings > Launcher and set another manifest URL only if

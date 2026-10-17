@@ -78,7 +78,7 @@ GitHub App so vale a pena quando voce quer criar uma integracao instalavel para 
 O site aponta para este padrao:
 
 ```txt
-https://github.com/washryan/launcheraetherion/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
+https://github.com/robb-devo/launcheraetherion/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
 ```
 
 Esse link so existe quando:
@@ -94,7 +94,7 @@ Esse caminho nao exige token local.
 
 1. Garanta que as Actions podem criar releases:
 
-- GitHub > repositorio `washryan/launcheraetherion`
+- GitHub > repositorio `robb-devo/launcheraetherion`
 - Settings > Actions > General
 - Workflow permissions
 - marque `Read and write permissions`
@@ -110,7 +110,7 @@ git push origin v0.2.0
 3. Abra:
 
 ```txt
-https://github.com/washryan/launcheraetherion/actions
+https://github.com/robb-devo/launcheraetherion/actions
 ```
 
 4. Aguarde o workflow `Build Windows Release` terminar.
@@ -118,7 +118,7 @@ https://github.com/washryan/launcheraetherion/actions
 5. Teste o link:
 
 ```txt
-https://github.com/washryan/launcheraetherion/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
+https://github.com/robb-devo/launcheraetherion/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
 ```
 
 Se o download iniciar, o site `/download` tambem vai funcionar.
@@ -144,7 +144,7 @@ Get-Item ".\dist\Aetherion.Launcher.Setup.0.2.0.exe"
 3. Crie um token no GitHub:
 
 - Acesse GitHub > Settings > Developer settings > Personal access tokens.
-- Use um token com permissao `Contents: Read and write` no repo `washryan/launcheraetherion`.
+- Use um token com permissao `Contents: Read and write` no repo `robb-devo/launcheraetherion`.
 - Copie o token.
 
 4. No PowerShell, defina o token apenas para a sessao atual:
@@ -162,7 +162,7 @@ pnpm release:win
 6. Teste o link:
 
 ```txt
-https://github.com/washryan/launcheraetherion/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
+https://github.com/robb-devo/launcheraetherion/releases/download/v0.2.0/Aetherion.Launcher.Setup.0.2.0.exe
 ```
 
 Se o download iniciar, o site `/download` tambem vai funcionar.
@@ -187,7 +187,7 @@ O launcher baixa os mods assim:
 2. Cada arquivo do manifest tem uma URL de GitHub Release, por exemplo:
 
 ```txt
-https://github.com/washryan/launcheraetherion/releases/download/v0.3/aether-1.19.2-1.4.2-forge.jar
+https://github.com/robb-devo/launcheraetherion/releases/download/v0.3/aether-1.19.2-1.4.2-forge.jar
 ```
 
 3. O launcher baixa o asset do release `v0.3`.
